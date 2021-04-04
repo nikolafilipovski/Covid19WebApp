@@ -13,4 +13,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Covid19.Entities\Covid19.Entities.csproj" />
+  </ItemGroup>
+
 </Project>

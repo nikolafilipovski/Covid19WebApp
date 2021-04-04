@@ -1,4 +1,8 @@
 using Covid19.Data;
+using Covid19.Repository;
+using Covid19.Repository.Interfaces;
+using Covid19.Service;
+using Covid19.Service.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,11 +33,18 @@ namespace Covid19
         {
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("Covid19Connection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<DataContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            services.AddTransient<IHospitalRepository, HospitalRepository>();
+            services.AddTransient<IPatientRepository, PatientRepository>();
+
+            services.AddTransient<IHospitalService, HospitalService>();
+            services.AddTransient<IPatientService, PatientService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

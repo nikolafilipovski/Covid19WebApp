@@ -1524,6 +1524,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "Covid19.Entities": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.12",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.12"
         },
@@ -1532,6 +1533,52 @@
         },
         "runtime": {
           "bin/placeholder/Covid19.Data.dll": {}
+        }
+      },
+      "Covid19.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.12",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.12"
+        },
+        "compile": {
+          "bin/placeholder/Covid19.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Covid19.Entities.dll": {}
+        }
+      },
+      "Covid19.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Covid19.Data": "1.0.0",
+          "Covid19.Entities": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.12",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.12"
+        },
+        "compile": {
+          "bin/placeholder/Covid19.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Covid19.Repository.dll": {}
+        }
+      },
+      "Covid19.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Covid19.Entities": "1.0.0",
+          "Covid19.Repository": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.12",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.12"
+        },
+        "compile": {
+          "bin/placeholder/Covid19.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Covid19.Service.dll": {}
         }
       }
     }
@@ -5705,11 +5752,28 @@
       "type": "project",
       "path": "../Covid19.Data/Covid19.Data.csproj",
       "msbuildProject": "../Covid19.Data/Covid19.Data.csproj"
+    },
+    "Covid19.Entities/1.0.0": {
+      "type": "project",
+      "path": "../Covid19.Entities/Covid19.Entities.csproj",
+      "msbuildProject": "../Covid19.Entities/Covid19.Entities.csproj"
+    },
+    "Covid19.Repository/1.0.0": {
+      "type": "project",
+      "path": "../Covid19.Repository/Covid19.Repository.csproj",
+      "msbuildProject": "../Covid19.Repository/Covid19.Repository.csproj"
+    },
+    "Covid19.Service/1.0.0": {
+      "type": "project",
+      "path": "../Covid19.Service/Covid19.Service.csproj",
+      "msbuildProject": "../Covid19.Service/Covid19.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Covid19.Data >= 1.0.0",
+      "Covid19.Repository >= 1.0.0",
+      "Covid19.Service >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 3.1.12",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.12",
       "Microsoft.AspNetCore.Identity.UI >= 3.1.12",
@@ -5746,6 +5810,12 @@
           "projectReferences": {
             "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\Covid19WebApp\\Covid19WebApp\\Covid19WebApp\\Covid19.Data\\Covid19.Data.csproj": {
               "projectPath": "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\Covid19WebApp\\Covid19WebApp\\Covid19WebApp\\Covid19.Data\\Covid19.Data.csproj"
+            },
+            "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\Covid19WebApp\\Covid19WebApp\\Covid19WebApp\\Covid19.Repository\\Covid19.Repository.csproj": {
+              "projectPath": "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\Covid19WebApp\\Covid19WebApp\\Covid19WebApp\\Covid19.Repository\\Covid19.Repository.csproj"
+            },
+            "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\Covid19WebApp\\Covid19WebApp\\Covid19WebApp\\Covid19.Service\\Covid19.Service.csproj": {
+              "projectPath": "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\Covid19WebApp\\Covid19WebApp\\Covid19WebApp\\Covid19.Service\\Covid19.Service.csproj"
             }
           }
         }

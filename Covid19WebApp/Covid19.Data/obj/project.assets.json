@@ -1557,6 +1557,20 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Covid19.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.12",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.12"
+        },
+        "compile": {
+          "bin/placeholder/Covid19.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Covid19.Entities.dll": {}
+        }
       }
     }
   },
@@ -5861,10 +5875,16 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "Covid19.Entities/1.0.0": {
+      "type": "project",
+      "path": "../Covid19.Entities/Covid19.Entities.csproj",
+      "msbuildProject": "../Covid19.Entities/Covid19.Entities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Covid19.Entities >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.12",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.12",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.12"
@@ -5896,7 +5916,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\Covid19WebApp\\Covid19WebApp\\Covid19WebApp\\Covid19.Entities\\Covid19.Entities.csproj": {
+              "projectPath": "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\Covid19WebApp\\Covid19WebApp\\Covid19WebApp\\Covid19.Entities\\Covid19.Entities.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
