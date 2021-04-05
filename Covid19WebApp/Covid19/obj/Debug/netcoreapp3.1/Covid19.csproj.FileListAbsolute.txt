@@ -94,3 +94,7 @@ C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19W
 C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19\obj\Debug\netcoreapp3.1\Covid19.dll
 C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19\obj\Debug\netcoreapp3.1\Covid19.pdb
 C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19\obj\Debug\netcoreapp3.1\Covid19.genruntimeconfig.cache
+C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19\bin\Debug\netcoreapp3.1\Covid19.Repository.dll
+C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19\bin\Debug\netcoreapp3.1\Covid19.Service.dll
+C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19\bin\Debug\netcoreapp3.1\Covid19.Repository.pdb
+C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19\bin\Debug\netcoreapp3.1\Covid19.Service.pdb

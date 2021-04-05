@@ -10,3 +10,8 @@ C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19W
 C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Repository\obj\Debug\netcoreapp3.1\Covid19.Repository.dll
 C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Repository\obj\Debug\netcoreapp3.1\Covid19.Repository.pdb
 C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Repository\obj\Debug\netcoreapp3.1\Covid19.Repository.genruntimeconfig.cache
+C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Repository\bin\Debug\netcoreapp3.1\Covid19.Data.dll
+C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Repository\bin\Debug\netcoreapp3.1\Covid19.Entities.dll
+C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Repository\bin\Debug\netcoreapp3.1\Covid19.Data.pdb
+C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Repository\bin\Debug\netcoreapp3.1\Covid19.Entities.pdb
+C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Repository\obj\Debug\netcoreapp3.1\Covid19.Repository.csproj.CopyComplete

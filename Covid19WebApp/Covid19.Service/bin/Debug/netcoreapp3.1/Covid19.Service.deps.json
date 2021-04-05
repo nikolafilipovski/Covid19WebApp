@@ -8,6 +8,8 @@
     ".NETCoreApp,Version=v3.1": {
       "Covid19.Service/1.0.0": {
         "dependencies": {
+          "Covid19.Entities": "1.0.0",
+          "Covid19.Repository": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.12",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.12",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.12"
@@ -1089,6 +1091,36 @@
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
         }
+      },
+      "Covid19.Data/1.0.0": {
+        "dependencies": {
+          "Covid19.Entities": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.12",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.12"
+        },
+        "runtime": {
+          "Covid19.Data.dll": {}
+        }
+      },
+      "Covid19.Entities/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.12",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.12"
+        },
+        "runtime": {
+          "Covid19.Entities.dll": {}
+        }
+      },
+      "Covid19.Repository/1.0.0": {
+        "dependencies": {
+          "Covid19.Data": "1.0.0",
+          "Covid19.Entities": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.12",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.12"
+        },
+        "runtime": {
+          "Covid19.Repository.dll": {}
+        }
       }
     }
   },
@@ -1832,6 +1864,21 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "Covid19.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Covid19.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Covid19.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

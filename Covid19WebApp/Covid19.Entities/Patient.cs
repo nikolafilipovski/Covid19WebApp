@@ -19,17 +19,15 @@ namespace Covid19.Entities
         [Display(Name = "Day of birth")]
         public DateTime dateOfBirth { get; set; }
 
-        [Display(Name = "Cured")]
-        public string cured { get; set; }
-
-        [Display(Name = "Receiving treatment")]
-        public string ill { get; set; }
-
-        [Display(Name = "Deceased")]
-        public string deceased { get; set; }
+        [Required]
+        [Display(Name = "Patient's condition")]
+        public string patientCondition { get; set; }
 
         public Hospital hospital { get; set; }
         public int hospitalID { get; set; }
+
+        public CurrentCondition currentCondition { get; set; }
+        public int currentConditionID { get; set; }
 
     }
 }

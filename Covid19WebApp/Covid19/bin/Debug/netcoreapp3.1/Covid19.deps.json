@@ -32,6 +32,8 @@
       "Covid19/1.0.0": {
         "dependencies": {
           "Covid19.Data": "1.0.0",
+          "Covid19.Repository": "1.0.0",
+          "Covid19.Service": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "3.1.12",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.12",
           "Microsoft.AspNetCore.Identity.UI": "3.1.12",
@@ -1486,6 +1488,34 @@
         },
         "compile": {
           "Covid19.Entities.dll": {}
+        }
+      },
+      "Covid19.Repository/1.0.0": {
+        "dependencies": {
+          "Covid19.Data": "1.0.0",
+          "Covid19.Entities": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.12",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.12"
+        },
+        "runtime": {
+          "Covid19.Repository.dll": {}
+        },
+        "compile": {
+          "Covid19.Repository.dll": {}
+        }
+      },
+      "Covid19.Service/1.0.0": {
+        "dependencies": {
+          "Covid19.Entities": "1.0.0",
+          "Covid19.Repository": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.12",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.12"
+        },
+        "runtime": {
+          "Covid19.Service.dll": {}
+        },
+        "compile": {
+          "Covid19.Service.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -3815,6 +3845,16 @@
       "sha512": ""
     },
     "Covid19.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Covid19.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Covid19.Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

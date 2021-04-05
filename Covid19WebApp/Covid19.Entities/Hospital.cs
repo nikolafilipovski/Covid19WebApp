@@ -15,11 +15,6 @@ namespace Covid19.Entities
         [Display(Name = "Hospital Name")]
         public string hospitalName { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        [Display(Name = "Hospital location")]
-        public string hospitalLocation { get; set; }
-
         [Display(Name = "Max capacity")]
         [Range(1, 10000, ErrorMessage = "Please enter a valid number!")]
         public int maxCapacity { get; set; }
@@ -28,6 +23,8 @@ namespace Covid19.Entities
         [Range(1, 10000, ErrorMessage = "Please enter a valid number!")]
         public int currentCapacity { get; set; }
 
+        public City city { get; set; }
+        public int cityID { get; set; }
         public ICollection<Patient> patients { get; set; }
 
     }

@@ -10,3 +10,10 @@ C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19W
 C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Service\obj\Debug\netcoreapp3.1\Covid19.Service.dll
 C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Service\obj\Debug\netcoreapp3.1\Covid19.Service.pdb
 C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Service\obj\Debug\netcoreapp3.1\Covid19.Service.genruntimeconfig.cache
+C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Service\bin\Debug\netcoreapp3.1\Covid19.Data.dll
+C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Service\bin\Debug\netcoreapp3.1\Covid19.Entities.dll
+C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Service\bin\Debug\netcoreapp3.1\Covid19.Repository.dll
+C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Service\bin\Debug\netcoreapp3.1\Covid19.Entities.pdb
+C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Service\bin\Debug\netcoreapp3.1\Covid19.Repository.pdb
+C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Service\bin\Debug\netcoreapp3.1\Covid19.Data.pdb
+C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Service\obj\Debug\netcoreapp3.1\Covid19.Service.csproj.CopyComplete
