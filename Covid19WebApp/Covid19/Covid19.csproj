@@ -19,4 +19,10 @@
     <ProjectReference Include="..\Covid19.Service\Covid19.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\City\" />
+    <Folder Include="Views\Hospital\" />
+    <Folder Include="Views\Patient\" />
+  </ItemGroup>
+
 </Project>

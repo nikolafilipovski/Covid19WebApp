@@ -16,6 +16,8 @@ namespace Covid19.Data
 
         public DbSet<Hospital> Hospitals { get; set; }
         public DbSet<Patient> Patients { get; set; }
+        public DbSet<City> Cities { get; set; }
+        public DbSet<CurrentCondition> CurrentConditions { get; set; }
 
 
 
