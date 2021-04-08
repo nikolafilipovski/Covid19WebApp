@@ -41,9 +41,13 @@ namespace Covid19
 
             services.AddTransient<IHospitalRepository, HospitalRepository>();
             services.AddTransient<IPatientRepository, PatientRepository>();
+            services.AddTransient<ICityRepository, CityRepository>();
+            services.AddTransient<ICurrentConditionRepository, CurrentConditionRepository>();
 
             services.AddTransient<IHospitalService, HospitalService>();
             services.AddTransient<IPatientService, PatientService>();
+            services.AddTransient<ICityService, CityService>();
+            services.AddTransient<ICurrentConditionService, CurrentConditionService>();
 
         }
 

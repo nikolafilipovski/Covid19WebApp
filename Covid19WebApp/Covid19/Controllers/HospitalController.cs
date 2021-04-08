@@ -1,4 +1,6 @@
-﻿using Covid19.Service.Interfaces;
+﻿using Covid19.Entities;
+using Covid19.Models;
+using Covid19.Service.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,85 +13,88 @@ namespace Covid19.Controllers
     public class HospitalController : Controller
     {
         private readonly IHospitalService _hospitalService;
+        private readonly ICityService _cityService;
 
-        public HospitalController(IHospitalService hospitalService)
+        public HospitalController(IHospitalService hospitalService, ICityService cityService)
         {
             _hospitalService = hospitalService;
+            _cityService = cityService;
         }
 
         // GET: HospitalController
         public ActionResult Index()
         {
-            return View();
+            var hospital = _hospitalService.GetHospitals();
+            return View(hospital);
         }
 
         // GET: HospitalController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var hospital = _hospitalService.GetHospitalByID(id);
+            return View(hospital);
         }
 
         // GET: HospitalController/Create
         public ActionResult Create()
         {
+            var cities = _cityService.GetCities();
+            //var dropdown = _hospitalService.
+            
             return View();
         }
 
         // POST: HospitalController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Hospital hospital)
         {
-            try
+            if (hospital != null)
             {
-                return RedirectToAction(nameof(Index));
+                if (!string.IsNullOrEmpty(hospital.hospitalName) || !string.IsNullOrWhiteSpace(hospital.hospitalName))
+                {
+                    _hospitalService.Add(hospital);
+                }
             }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: HospitalController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var hospital = _hospitalService.GetHospitalByID(id);
+            return View(hospital);
         }
 
         // POST: HospitalController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Hospital hospital)
         {
-            try
+            if (hospital != null)
             {
-                return RedirectToAction(nameof(Index));
+                if (!string.IsNullOrEmpty(hospital.hospitalName) || !string.IsNullOrWhiteSpace(hospital.hospitalName))
+                {
+                    _hospitalService.Edit(hospital);
+                }
             }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: HospitalController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var hospital = _hospitalService.GetHospitalByID(id);
+            return View(hospital);
         }
 
         // POST: HospitalController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, Hospital hospital)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            _hospitalService.Delete(hospital);
+            return RedirectToAction(nameof(Index));
         }
     }
 }

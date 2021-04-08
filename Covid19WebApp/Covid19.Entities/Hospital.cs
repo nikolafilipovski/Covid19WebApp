@@ -8,6 +8,7 @@ namespace Covid19.Entities
     public class Hospital
     {
         [Key]
+        [Display(Name = "Hospital")]
         public int hospitalID { get; set; }
 
         [Required]

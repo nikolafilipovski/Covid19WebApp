@@ -13,12 +13,10 @@ namespace Covid19.Data
         public DataContext(DbContextOptions options) : base(options) { }
 
 
-
         public DbSet<Hospital> Hospitals { get; set; }
         public DbSet<Patient> Patients { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<CurrentCondition> CurrentConditions { get; set; }
-
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

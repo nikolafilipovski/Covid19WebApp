@@ -23,7 +23,8 @@ namespace Covid19.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var info = _currentConditionService.GetCurrentConditions();
+            return View(info);
         }
 
         public IActionResult Privacy()

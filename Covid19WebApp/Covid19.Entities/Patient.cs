@@ -8,6 +8,7 @@ namespace Covid19.Entities
     public class Patient
     {
         [Key]
+        [Display(Name = "Patient")]
         public int patientID { get; set; }
 
         [Required]
@@ -19,15 +20,8 @@ namespace Covid19.Entities
         [Display(Name = "Day of birth")]
         public DateTime dateOfBirth { get; set; }
 
-        [Required]
-        [Display(Name = "Patient's condition")]
-        public string patientCondition { get; set; }
-
         public Hospital hospital { get; set; }
         public int hospitalID { get; set; }
-
-        public CurrentCondition currentCondition { get; set; }
-        public int currentConditionID { get; set; }
 
     }
 }

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Covid19.Entities.City>
+
+<div class="row text-center">
+    <div class="col-sm-12 col-md-12">
+        <h1>Cities</h1>
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-sm-12 col-md-6 offset-3">
+        <a asp-action="Create" class="btn btn-success btn-block"><i class="fas fa-plus-square"></i> Create</a>
+    </div>
+</div>
+
+<hr />
+
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Population</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var city in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => city.cityID)</td>
+                <td>@Html.DisplayFor(modelItem => city.cityName)</td>
+                <td>@Html.DisplayFor(modelItem => city.population)</td>
+                <td class="w-50 text-center">
+                    <a asp-action="Edit" asp-route-id="@city.cityID" class="btn btn-secondary w-25">
+                        <i class="fas fa-edit"></i> Edit
+                    </a>
+                    <a asp-action="Details" asp-route-id="@city.cityID" class="btn btn-info w-25">
+                        <i class="fas fa-info"></i> Details
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@city.cityID" class="btn btn-danger w-25">
+                        <i class="fas fa-trash"></i> Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

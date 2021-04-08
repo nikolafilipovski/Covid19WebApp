@@ -11,18 +11,13 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.12" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.12" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.12" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Covid19.Data\Covid19.Data.csproj" />
     <ProjectReference Include="..\Covid19.Repository\Covid19.Repository.csproj" />
     <ProjectReference Include="..\Covid19.Service\Covid19.Service.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\City\" />
-    <Folder Include="Views\Hospital\" />
-    <Folder Include="Views\Patient\" />
   </ItemGroup>
 
 </Project>

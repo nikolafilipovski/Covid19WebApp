@@ -1,0 +1,48 @@
+﻿@model Covid19.Entities.Hospital
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Hospital</h4>
+<hr />
+<div class="row">
+    <div class="col-sm-12 col-md-6 offset-3">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="hospitalName" class="control-label"></label>
+                <input asp-for="hospitalName" class="form-control" />
+                <span asp-validation-for="hospitalName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="maxCapacity" class="control-label"></label>
+                <input asp-for="maxCapacity" class="form-control" />
+                <span asp-validation-for="maxCapacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="currentCapacity" class="control-label"></label>
+                <input asp-for="currentCapacity" class="form-control" />
+                <span asp-validation-for="currentCapacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cityID" class="control-label"></label>
+                <select asp-for="cityID" class="form-control" asp-items="ViewBag.cityID"></select>
+                <input type="hidden" asp-for="city" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

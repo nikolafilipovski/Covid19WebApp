@@ -36,7 +36,7 @@ namespace Covid19.Data.Migrations
 
                     b.HasKey("cityID");
 
-                    b.ToTable("City");
+                    b.ToTable("Cities");
                 });
 
             modelBuilder.Entity("Covid19.Entities.CurrentCondition", b =>
@@ -60,7 +60,7 @@ namespace Covid19.Data.Migrations
 
                     b.HasKey("currentConditionID");
 
-                    b.ToTable("CurrentCondition");
+                    b.ToTable("CurrentConditions");
                 });
 
             modelBuilder.Entity("Covid19.Entities.Hospital", b =>
@@ -98,7 +98,7 @@ namespace Covid19.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("currentConditionID")
+                    b.Property<int?>("currentConditionID")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("dateOfBirth")
@@ -106,10 +106,6 @@ namespace Covid19.Data.Migrations
 
                     b.Property<int>("hospitalID")
                         .HasColumnType("int");
-
-                    b.Property<string>("patientCondition")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("patientName")
                         .IsRequired()
@@ -336,11 +332,9 @@ namespace Covid19.Data.Migrations
 
             modelBuilder.Entity("Covid19.Entities.Patient", b =>
                 {
-                    b.HasOne("Covid19.Entities.CurrentCondition", "currentCondition")
+                    b.HasOne("Covid19.Entities.CurrentCondition", null)
                         .WithMany("patients")
-                        .HasForeignKey("currentConditionID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("currentConditionID");
 
                     b.HasOne("Covid19.Entities.Hospital", "hospital")
                         .WithMany("patients")

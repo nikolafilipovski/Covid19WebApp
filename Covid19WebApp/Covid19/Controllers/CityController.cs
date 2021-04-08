@@ -1,6 +1,8 @@
-﻿using Covid19.Service.Interfaces;
+﻿using Covid19.Entities;
+using Covid19.Service.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,13 +22,15 @@ namespace Covid19.Controllers
         // GET: CityController
         public ActionResult Index()
         {
-            return View();
+            var city = _cityService.GetCities();
+            return View(city);
         }
 
         // GET: CityController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var city = _cityService.GetCityByID(id);
+            return View(city);
         }
 
         // GET: CityController/Create
@@ -38,58 +42,54 @@ namespace Covid19.Controllers
         // POST: CityController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(City city)
         {
-            try
+            if (city != null)
             {
-                return RedirectToAction(nameof(Index));
+                if (!string.IsNullOrEmpty(city.cityName) || !string.IsNullOrWhiteSpace(city.cityName))
+                {
+                    _cityService.Add(city);
+                }
             }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: CityController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var city = _cityService.GetCityByID(id);
+            return View(city);
         }
 
         // POST: CityController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, City city)
         {
-            try
+            if (city != null)
             {
-                return RedirectToAction(nameof(Index));
+                if (!string.IsNullOrEmpty(city.cityName) || !string.IsNullOrWhiteSpace(city.cityName))
+                {
+                    _cityService.Edit(city);
+                }
             }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: CityController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var city = _cityService.GetCityByID(id);
+            return View(city);
         }
 
         // POST: CityController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, City city)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            _cityService.Delete(city);
+            return RedirectToAction(nameof(Index));
         }
     }
 }

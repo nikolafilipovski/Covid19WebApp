@@ -1,4 +1,5 @@
-﻿using Covid19.Service.Interfaces;
+﻿using Covid19.Entities;
+using Covid19.Service.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -20,13 +21,15 @@ namespace Covid19.Controllers
         // GET: PatientController
         public ActionResult Index()
         {
-            return View();
+            var patient = _patientService.GetPatients();
+            return View(patient);
         }
 
         // GET: PatientController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var patient = _patientService.GetPatientByID(id);
+            return View(patient);
         }
 
         // GET: PatientController/Create
@@ -38,58 +41,55 @@ namespace Covid19.Controllers
         // POST: PatientController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Patient patient)
         {
-            try
+            if (patient != null)
             {
-                return RedirectToAction(nameof(Index));
+                if (!string.IsNullOrEmpty(patient.patientName) || !string.IsNullOrWhiteSpace(patient.patientName))
+                {
+                    _patientService.Add(patient);
+                }
             }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: PatientController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var patient = _patientService.GetPatientByID(id);
+            return View(patient);
         }
 
         // POST: PatientController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Patient patient)
         {
-            try
+            if (patient != null)
             {
-                return RedirectToAction(nameof(Index));
+                if (!string.IsNullOrEmpty(patient.patientName) || !string.IsNullOrWhiteSpace(patient.patientName))
+                {
+                    _patientService.Edit(patient);
+                }
             }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: PatientController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var patient = _patientService.GetPatientByID(id);
+            return View(patient);
         }
 
         // POST: PatientController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, Patient patient)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            _patientService.Delete(patient);
+            return RedirectToAction(nameof(Index));
         }
+
     }
 }
