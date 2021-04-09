@@ -38,9 +38,9 @@ namespace Covid19.Controllers
         // GET: HospitalController/Create
         public ActionResult Create()
         {
-            //var hospital = _hospitalService.GetHospitals();
-            //var cities = _cityService.GetCities();
-            //ViewBag.cityList = cities;
+            var cities = _cityService.GetCities();
+            var dropdown = _hospitalService.cityList(cities);
+            ViewBag.cityList = dropdown;
 
             return View();
         }

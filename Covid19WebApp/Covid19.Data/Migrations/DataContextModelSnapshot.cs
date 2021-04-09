@@ -110,6 +110,9 @@ namespace Covid19.Data.Migrations
                     b.Property<int>("hospitalID")
                         .HasColumnType("int");
 
+                    b.Property<string>("hospitalName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("patientName")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")

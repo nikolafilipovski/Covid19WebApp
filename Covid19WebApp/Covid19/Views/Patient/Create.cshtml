@@ -23,8 +23,9 @@
                 <span asp-validation-for="dateOfBirth" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="hospitalID" class="control-label"></label>
-                <select asp-for="hospitalID" class ="form-control" asp-items="ViewBag.hospitalID"></select>
+                <label asp-for="hospitalID" class="control-label">Hospital</label>
+                <select asp-for="hospitalID" class="form-control" asp-items="ViewBag.hospitalList"></select>
+                <input asp-for="hospitalName" hidden class="form-control" />
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

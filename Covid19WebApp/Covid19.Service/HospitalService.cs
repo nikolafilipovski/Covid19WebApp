@@ -1,11 +1,11 @@
 ﻿using Covid19.Entities;
 using Covid19.Repository.Interfaces;
 using Covid19.Service.Interfaces;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Web.Mvc;
 
 
 namespace Covid19.Service
@@ -54,7 +54,7 @@ namespace Covid19.Service
             {
                 allCities.Add(new SelectListItem { Value = item.cityID.ToString(), Text = item.cityName });
             }
-            return allCities.AsEnumerable();
+            return allCities;
         } 
 
     }

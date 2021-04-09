@@ -1,4 +1,5 @@
 ﻿using Covid19.Entities;
+using Covid19.Models;
 using Covid19.Service.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,10 +13,12 @@ namespace Covid19.Controllers
     public class PatientController : Controller
     {
         private readonly IPatientService _patientService;
+        private readonly IHospitalService _hospitalService;
 
-        public PatientController(IPatientService patientService)
+        public PatientController(IPatientService patientService, IHospitalService hospitalService)
         {
             _patientService = patientService;
+            _hospitalService = hospitalService;
         }
 
         // GET: PatientController
@@ -35,6 +38,10 @@ namespace Covid19.Controllers
         // GET: PatientController/Create
         public ActionResult Create()
         {
+            var hospitals = _hospitalService.GetHospitals();
+            var dropdown = _patientService.hospitalList(hospitals);
+            ViewBag.hospitalList = dropdown;
+
             return View();
         }
 
