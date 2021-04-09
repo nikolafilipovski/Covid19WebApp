@@ -8,7 +8,6 @@ namespace Covid19.Entities
     public class Hospital
     {
         [Key]
-        [Display(Name = "Hospital")]
         public int hospitalID { get; set; }
 
         [Required]
@@ -26,6 +25,9 @@ namespace Covid19.Entities
 
         public City city { get; set; }
         public int cityID { get; set; }
+
+        [Display(Name = "City Name")]
+        public string cityName { get; set; }
         public ICollection<Patient> patients { get; set; }
 
     }

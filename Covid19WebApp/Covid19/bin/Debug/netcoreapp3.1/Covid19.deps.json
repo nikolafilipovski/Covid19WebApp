@@ -34,6 +34,7 @@
           "Covid19.Data": "1.0.0",
           "Covid19.Repository": "1.0.0",
           "Covid19.Service": "1.0.0",
+          "Microsoft.AspNet.Mvc": "5.2.7",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "3.1.12",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.12",
           "Microsoft.AspNetCore.Identity.UI": "3.1.12",
@@ -2418,6 +2419,7 @@
       "Covid19.Data/1.0.0": {
         "dependencies": {
           "Covid19.Entities": "1.0.0",
+          "Microsoft.AspNet.Mvc": "5.2.7",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.12",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.12"
         },
@@ -2430,6 +2432,7 @@
       },
       "Covid19.Entities/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNet.Mvc": "5.2.7",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.12",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.12"
         },
@@ -2444,6 +2447,7 @@
         "dependencies": {
           "Covid19.Data": "1.0.0",
           "Covid19.Entities": "1.0.0",
+          "Microsoft.AspNet.Mvc": "5.2.7",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.12",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.12"
         },

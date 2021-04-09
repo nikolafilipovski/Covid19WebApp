@@ -38,18 +38,28 @@ namespace Covid19.Controllers
         // GET: HospitalController/Create
         public ActionResult Create()
         {
-            var cities = _cityService.GetCities();
-            //var dropdown = _hospitalService.
-            
+            //var hospital = _hospitalService.GetHospitals();
+            //var cities = _cityService.GetCities();
+            //ViewBag.cityList = cities;
+
             return View();
         }
 
         // POST: HospitalController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Hospital hospital)
+        public ActionResult Create(HospitalViewModel model)
         {
-            if (hospital != null)
+            Hospital hospital = new Hospital();
+            hospital.city = model.city;
+            hospital.cityID = model.cityID;
+            hospital.currentCapacity = model.currentCapacity;
+            hospital.hospitalID = model.hospitalID;
+            hospital.hospitalName = model.hospitalName;
+            hospital.maxCapacity = model.maxCapacity;
+            hospital.cityName = model.cityName;
+
+            if (model != null)
             {
                 if (!string.IsNullOrEmpty(hospital.hospitalName) || !string.IsNullOrWhiteSpace(hospital.hospitalName))
                 {
@@ -96,5 +106,6 @@ namespace Covid19.Controllers
             _hospitalService.Delete(hospital);
             return RedirectToAction(nameof(Index));
         }
+
     }
 }

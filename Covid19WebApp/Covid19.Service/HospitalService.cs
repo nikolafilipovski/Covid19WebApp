@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 
+
 namespace Covid19.Service
 {
     public class HospitalService : IHospitalService
@@ -55,7 +56,6 @@ namespace Covid19.Service
             }
             return allCities.AsEnumerable();
         } 
-
 
     }
 }

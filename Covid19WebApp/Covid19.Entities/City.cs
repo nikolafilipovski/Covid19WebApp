@@ -8,7 +8,6 @@ namespace Covid19.Entities
     public class City
     {
         [Key]
-        [Display(Name = "City")]
         public int cityID { get; set; }
 
         [Required]
