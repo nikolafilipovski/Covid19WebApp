@@ -2,6 +2,7 @@
 using Covid19.Repository.Interfaces;
 using Covid19.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,28 +12,54 @@ namespace Covid19.Service
     public class PatientService : IPatientService
     {
         private readonly IPatientRepository _patientRepository;
+        private readonly ILogger<PatientService> _logger;
 
-        public PatientService(IPatientRepository patientRepository)
+        public PatientService(IPatientRepository patientRepository, ILogger<PatientService> logger)
         {
             _patientRepository = patientRepository;
+            _logger = logger;
         }
 
         public void Add(Patient patient)
         {
-            _patientRepository.Add(patient);
-            // loger
+            try
+            {
+                _patientRepository.Add(patient);
+                _logger.LogInformation("New patient was added!");
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError("An error occurred while adding the patient" + " | " + exception);
+                throw;
+            }
         }
 
         public void Delete(Patient patient)
         {
-            _patientRepository.Delete(patient);
-            // loger
+            try
+            {
+                _patientRepository.Delete(patient);
+                _logger.LogInformation("The patient was deleted!");
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError("An error occurred while deleting the patient" + " | " + exception);
+                throw;
+            }
         }
 
         public void Edit(Patient patient)
         {
-            _patientRepository.Edit(patient);
-            // loger
+            try
+            {
+                _patientRepository.Edit(patient);
+                _logger.LogInformation("The patient was updated!");
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError("An error occurred while updating the patient" + " | " + exception);
+                throw;
+            }
         }
 
         public Patient GetPatientByID(int ID)

@@ -24,6 +24,7 @@ namespace Covid19.Controllers
         public IActionResult Index()
         {
             var info = _currentConditionService.GetCurrentConditions();
+            _logger.LogInformation("All conditions were listed!");
             return View(info);
         }
 

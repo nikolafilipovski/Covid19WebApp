@@ -1,6 +1,7 @@
 ﻿using Covid19.Entities;
 using Covid19.Repository.Interfaces;
 using Covid19.Service.Interfaces;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,28 +11,54 @@ namespace Covid19.Service
     public class CurrentConditionService : ICurrentConditionService
     {
         private readonly ICurrentConditionRepository _currentConditionRepository;
+        private readonly ILogger<CurrentConditionService> _logger;
 
-        public CurrentConditionService(ICurrentConditionRepository currentConditionRepository)
+        public CurrentConditionService(ICurrentConditionRepository currentConditionRepository, ILogger<CurrentConditionService> logger)
         {
             _currentConditionRepository = currentConditionRepository;
+            _logger = logger;
         }
 
         public void Add(CurrentCondition currentCondition)
         {
-            _currentConditionRepository.Add(currentCondition);
-            // logger
+            try
+            {
+                _currentConditionRepository.Add(currentCondition);
+                _logger.LogInformation("New condition was added!");
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError("An error occurred while adding the condition" + " | " + exception);
+                throw;
+            }
         }
 
         public void Delete(CurrentCondition currentCondition)
         {
-            _currentConditionRepository.Delete(currentCondition);
-            // logger
+            try
+            {
+                _currentConditionRepository.Delete(currentCondition);
+                _logger.LogInformation("The condition was deleted!");
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError("An error occurred while deleting the condition" + " | " + exception);
+                throw;
+            }
         }
 
         public void Edit(CurrentCondition currentCondition)
         {
-            _currentConditionRepository.Edit(currentCondition);
-            // logger
+            try
+            {
+                _currentConditionRepository.Edit(currentCondition);
+                _logger.LogInformation("The condition was updated!");
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError("An error occurred while updating the condition" + " | " + exception);
+                throw;
+            }
         }
 
         public CurrentCondition GetCurrentConditionByID(int ID)

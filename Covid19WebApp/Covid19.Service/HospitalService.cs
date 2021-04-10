@@ -2,6 +2,7 @@
 using Covid19.Repository.Interfaces;
 using Covid19.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,25 +14,54 @@ namespace Covid19.Service
     public class HospitalService : IHospitalService
     {
         private readonly IHospitalRepository _hospitalRepository;
+        private readonly ILogger<HospitalService> _logger;
 
-        public HospitalService(IHospitalRepository hospitalRepository)
+        public HospitalService(IHospitalRepository hospitalRepository, ILogger<HospitalService> logger)
         {
             _hospitalRepository = hospitalRepository;
+            _logger = logger;
         }
 
         public void Add(Hospital hospital)
         {
-            _hospitalRepository.Add(hospital);
+            try
+            {
+                _hospitalRepository.Add(hospital);
+                _logger.LogInformation("New hospital was added!");
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError("An error occurred while adding the hospital" + " | " + exception);
+                throw;
+            }
         }
 
         public void Delete(Hospital hospital)
         {
-            _hospitalRepository.Delete(hospital);
+            try
+            {
+                _hospitalRepository.Delete(hospital);
+                _logger.LogInformation("The hospital was deleted!");
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError("An error occurred while deleting the hospital" + " | " + exception);
+                throw;
+            }
         }
 
         public void Edit(Hospital hospital)
         {
-            _hospitalRepository.Edit(hospital);
+            try
+            {
+                _hospitalRepository.Edit(hospital);
+                _logger.LogInformation("The hospital was updated!");
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError("An error occurred while updating the hospital" + " | " + exception);
+                throw;
+            }
         }
 
         public Hospital GetHospitalByID(int ID)

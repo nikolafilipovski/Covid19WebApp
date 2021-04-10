@@ -1,6 +1,7 @@
 ﻿using Covid19.Data;
 using Covid19.Entities;
 using Covid19.Repository.Interfaces;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,31 +12,57 @@ namespace Covid19.Repository
     public class HospitalRepository : IHospitalRepository
     {
         private readonly DataContext _dataContext;
+        private readonly ILogger<HospitalRepository> _logger;
 
-        public HospitalRepository(DataContext dataContext)
+        public HospitalRepository(DataContext dataContext, ILogger<HospitalRepository> logger)
         {
             _dataContext = dataContext;
+            _logger = logger; 
         }
 
         public void Add(Hospital hospital)
         {
-            _dataContext.Hospitals.Add(hospital);
-            _dataContext.SaveChanges();
-            // tuka treba loger
+            try
+            {
+                _dataContext.Hospitals.Add(hospital);
+                _dataContext.SaveChanges();
+                _logger.LogInformation("New hospital was added!");
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError("An error occurred while adding the hospital" + " | " + exception);
+                throw;
+            }
         }
 
         public void Delete(Hospital hospital)
         {
-            _dataContext.Hospitals.Remove(hospital);
-            _dataContext.SaveChanges();
-            // loger
+            try
+            {
+                _dataContext.Hospitals.Remove(hospital);
+                _dataContext.SaveChanges();
+                _logger.LogInformation("The hospital was deleted!");
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError("An error occurred while deleting the hospital" + " | " + exception);
+                throw;
+            }
         }
 
         public void Edit(Hospital hospital)
         {
-            _dataContext.Hospitals.Update(hospital);
-            _dataContext.SaveChanges();
-            // loger
+            try
+            {
+                _dataContext.Hospitals.Update(hospital);
+                _dataContext.SaveChanges();
+                _logger.LogInformation("The hospital was edited!");
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError("An error occurred while editing the hospital" + " | " + exception);
+                throw;
+            }
         }
 
         public Hospital GetHospitalByID(int ID)

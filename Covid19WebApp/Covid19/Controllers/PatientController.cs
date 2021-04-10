@@ -3,6 +3,7 @@ using Covid19.Models;
 using Covid19.Service.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,17 +15,20 @@ namespace Covid19.Controllers
     {
         private readonly IPatientService _patientService;
         private readonly IHospitalService _hospitalService;
+        private readonly ILogger<PatientController> _logger;
 
-        public PatientController(IPatientService patientService, IHospitalService hospitalService)
+        public PatientController(IPatientService patientService, IHospitalService hospitalService, ILogger<PatientController> logger)
         {
             _patientService = patientService;
             _hospitalService = hospitalService;
+            _logger = logger;
         }
 
         // GET: PatientController
         public ActionResult Index()
         {
             var patient = _patientService.GetPatients();
+            _logger.LogInformation("All patients were listed!");
             return View(patient);
         }
 
@@ -55,6 +59,7 @@ namespace Covid19.Controllers
                 if (!string.IsNullOrEmpty(patient.patientName) || !string.IsNullOrWhiteSpace(patient.patientName))
                 {
                     _patientService.Add(patient);
+                    _logger.LogInformation("New patient was added!");
                 }
             }
             return RedirectToAction(nameof(Index));
@@ -77,6 +82,7 @@ namespace Covid19.Controllers
                 if (!string.IsNullOrEmpty(patient.patientName) || !string.IsNullOrWhiteSpace(patient.patientName))
                 {
                     _patientService.Edit(patient);
+                    _logger.LogInformation("The patient was updated!");
                 }
             }
             return RedirectToAction(nameof(Index));
@@ -95,6 +101,7 @@ namespace Covid19.Controllers
         public ActionResult Delete(int id, Patient patient)
         {
             _patientService.Delete(patient);
+            _logger.LogInformation("The patient was deleted!");
             return RedirectToAction(nameof(Index));
         }
 

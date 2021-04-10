@@ -61,6 +61,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.12, )"
+            },
+            "NLog.Web.AspNetCore": {
+              "target": "Package",
+              "version": "[4.12.0, )"
             }
           },
           "imports": [
@@ -135,6 +139,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.12, )"
+            },
+            "NLog.Web.AspNetCore": {
+              "target": "Package",
+              "version": "[4.12.0, )"
             }
           },
           "imports": [
@@ -216,6 +224,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.12, )"
+            },
+            "NLog.Web.AspNetCore": {
+              "target": "Package",
+              "version": "[4.12.0, )"
             }
           },
           "imports": [
@@ -297,6 +309,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.12, )"
+            },
+            "NLog.Web.AspNetCore": {
+              "target": "Package",
+              "version": "[4.12.0, )"
             }
           },
           "imports": [
@@ -379,6 +395,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[3.1.12, )"
+            },
+            "NLog.Web.AspNetCore": {
+              "target": "Package",
+              "version": "[4.12.0, )"
             }
           },
           "imports": [

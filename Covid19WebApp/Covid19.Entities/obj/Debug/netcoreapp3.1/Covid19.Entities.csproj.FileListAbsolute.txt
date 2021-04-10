@@ -3,6 +3,7 @@ C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19W
 C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Entities\bin\Debug\netcoreapp3.1\Covid19.Entities.runtimeconfig.dev.json
 C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Entities\bin\Debug\netcoreapp3.1\Covid19.Entities.dll
 C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Entities\bin\Debug\netcoreapp3.1\Covid19.Entities.pdb
+C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Entities\obj\Debug\netcoreapp3.1\Covid19.Entities.csprojAssemblyReference.cache
 C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Entities\obj\Debug\netcoreapp3.1\Covid19.Entities.AssemblyInfoInputs.cache
 C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Entities\obj\Debug\netcoreapp3.1\Covid19.Entities.AssemblyInfo.cs
 C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Entities\obj\Debug\netcoreapp3.1\Covid19.Entities.csproj.CoreCompileInputs.cache

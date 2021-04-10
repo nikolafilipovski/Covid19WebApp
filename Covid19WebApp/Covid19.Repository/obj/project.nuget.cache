@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "g1pVdfJoaYE8UHBep82M4l6n+VBvHuSQmwLWV6GNo1keMZ3inQ1fIFpe5lwNzkQrq1q+dfQIaN4i4FXRCyIInw==",
+  "dgSpecHash": "9RsBu7ykf+319yFLwXW0UZzEHaJd4lLh51dF3H8cOnyA7nw7lFzG1VPBzAM6FSJP6NPT/e0RM3gTtZto/XnD9w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Matej & Marko\\Desktop\\Code Academy\\Covid19WebApp\\Covid19WebApp\\Covid19WebApp\\Covid19.Repository\\Covid19.Repository.csproj",
   "expectedPackageFiles": [
@@ -44,6 +44,9 @@
     "C:\\Users\\Matej & Marko\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Matej & Marko\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\Matej & Marko\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\Matej & Marko\\.nuget\\packages\\nlog\\4.7.9\\nlog.4.7.9.nupkg.sha512",
+    "C:\\Users\\Matej & Marko\\.nuget\\packages\\nlog.extensions.logging\\1.7.2\\nlog.extensions.logging.1.7.2.nupkg.sha512",
+    "C:\\Users\\Matej & Marko\\.nuget\\packages\\nlog.web.aspnetcore\\4.12.0\\nlog.web.aspnetcore.4.12.0.nupkg.sha512",
     "C:\\Users\\Matej & Marko\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\Matej & Marko\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Matej & Marko\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
