@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Covid19.Data.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Initial_migration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -47,19 +47,33 @@ namespace Covid19.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Hospitals",
+                name: "Cities",
                 columns: table => new
                 {
-                    hospitalID = table.Column<int>(nullable: false)
+                    cityID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    hospitalName = table.Column<string>(maxLength: 100, nullable: false),
-                    hospitalLocation = table.Column<string>(maxLength: 50, nullable: false),
-                    maxCapacity = table.Column<int>(nullable: false),
-                    currentCapacity = table.Column<int>(nullable: false)
+                    cityName = table.Column<string>(maxLength: 50, nullable: false),
+                    population = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Hospitals", x => x.hospitalID);
+                    table.PrimaryKey("PK_Cities", x => x.cityID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CurrentConditions",
+                columns: table => new
+                {
+                    currentConditionID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    confirmedCases = table.Column<int>(nullable: false),
+                    activeCases = table.Column<int>(nullable: false),
+                    recovered = table.Column<int>(nullable: false),
+                    confirmedDeaths = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CurrentConditions", x => x.currentConditionID);
                 });
 
             migrationBuilder.CreateTable(
@@ -169,6 +183,29 @@ namespace Covid19.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Hospitals",
+                columns: table => new
+                {
+                    hospitalID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    hospitalName = table.Column<string>(maxLength: 100, nullable: false),
+                    maxCapacity = table.Column<int>(nullable: false),
+                    currentCapacity = table.Column<int>(nullable: false),
+                    cityID = table.Column<int>(nullable: false),
+                    cityName = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Hospitals", x => x.hospitalID);
+                    table.ForeignKey(
+                        name: "FK_Hospitals_Cities_cityID",
+                        column: x => x.cityID,
+                        principalTable: "Cities",
+                        principalColumn: "cityID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Patients",
                 columns: table => new
                 {
@@ -176,14 +213,19 @@ namespace Covid19.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     patientName = table.Column<string>(maxLength: 50, nullable: false),
                     dateOfBirth = table.Column<DateTime>(nullable: false),
-                    cured = table.Column<string>(nullable: true),
-                    ill = table.Column<string>(nullable: true),
-                    deceased = table.Column<string>(nullable: true),
-                    hospitalID = table.Column<int>(nullable: false)
+                    hospitalID = table.Column<int>(nullable: false),
+                    hospitalName = table.Column<string>(nullable: true),
+                    currentConditionID = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Patients", x => x.patientID);
+                    table.ForeignKey(
+                        name: "FK_Patients_CurrentConditions_currentConditionID",
+                        column: x => x.currentConditionID,
+                        principalTable: "CurrentConditions",
+                        principalColumn: "currentConditionID",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Patients_Hospitals_hospitalID",
                         column: x => x.hospitalID,
@@ -191,6 +233,26 @@ namespace Covid19.Data.Migrations
                         principalColumn: "hospitalID",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[] { "b4280b6a-0613-4cbd-a9e6-f1701e926e73", "61fcef02-908c-4136-aa5c-b7aa8a26aa75", "Admin", "ADMIN" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[] { "b4280b6a-0613-4cbd-a9e6-f1701e926e74", "90d69836-f4e6-4dff-bfb0-f6624bc449bf", "Guest", "GUEST" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { "b4280b6a-0613-4cbd-a9e6-f1701e926e73", 0, "c8554266-b401-4519-9aeb-a9283053fc58", "admin@covid19.com", true, false, null, "ADMIN@COVID19.COM", "ADMINUSERNAME", "AQAAAAEAACcQAAAAEN3SaACzKfQB6Wy2yqoMk6F0IUqkLiIqfnISmjaFSaHaW694sc8nsn5VLqXCeYEB2Q==", null, false, "", false, "adminUserName" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "UserId", "RoleId" },
+                values: new object[] { "b4280b6a-0613-4cbd-a9e6-f1701e926e73", "b4280b6a-0613-4cbd-a9e6-f1701e926e73" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -232,6 +294,16 @@ namespace Covid19.Data.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Hospitals_cityID",
+                table: "Hospitals",
+                column: "cityID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Patients_currentConditionID",
+                table: "Patients",
+                column: "currentConditionID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Patients_hospitalID",
                 table: "Patients",
                 column: "hospitalID");
@@ -264,7 +336,13 @@ namespace Covid19.Data.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
+                name: "CurrentConditions");
+
+            migrationBuilder.DropTable(
                 name: "Hospitals");
+
+            migrationBuilder.DropTable(
+                name: "Cities");
         }
     }
 }

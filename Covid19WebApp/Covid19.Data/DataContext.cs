@@ -25,7 +25,7 @@ namespace Covid19.Data
 
             const string ADMIN_ID = "b4280b6a-0613-4cbd-a9e6-f1701e926e73";
             const string ROLE_ID = ADMIN_ID;
-            const string password = "Admin123!";
+            const string password = "Admin1234!";
 
             modelBuilder.Entity<IdentityRole>().HasData(
                 new IdentityRole

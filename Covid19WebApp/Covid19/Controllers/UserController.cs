@@ -43,10 +43,9 @@ namespace Covid19.Controllers
         {
             var roles = _roleManager.Roles;
             UserModel userModel = new UserModel();
-            var dropdown = _userService.Dropdown(roles);
-            ViewBag.roleList = dropdown;
+            userModel.Roles = _userService.Dropdown(roles);
 
-            return View();
+            return View(userModel);
         }
 
         // POST: UserController/Create
@@ -82,24 +81,33 @@ namespace Covid19.Controllers
         }
 
         // GET: UserController/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<ActionResult> Edit(string id)
         {
-            return View();
+            IdentityUser user = await _userManager.FindByIdAsync(id);
+            var roles = _roleManager.Roles;
+
+            if (user != null)
+            {
+                var userModel = new UserModel
+                {
+                    userID = user.Id,
+                    userEmail = user.Email,
+                    Roles = _userService.Dropdown(roles)
+                };
+                return View(userModel);
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
         }
 
         // POST: UserController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, UserModel user)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            
         }
 
         // GET: UserController/Delete/5

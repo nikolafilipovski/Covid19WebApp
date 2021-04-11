@@ -152,6 +152,22 @@ namespace Covid19.Data.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "b4280b6a-0613-4cbd-a9e6-f1701e926e73",
+                            ConcurrencyStamp = "61fcef02-908c-4136-aa5c-b7aa8a26aa75",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "b4280b6a-0613-4cbd-a9e6-f1701e926e74",
+                            ConcurrencyStamp = "90d69836-f4e6-4dff-bfb0-f6624bc449bf",
+                            Name = "Guest",
+                            NormalizedName = "GUEST"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -241,6 +257,24 @@ namespace Covid19.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "b4280b6a-0613-4cbd-a9e6-f1701e926e73",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "c8554266-b401-4519-9aeb-a9283053fc58",
+                            Email = "admin@covid19.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@COVID19.COM",
+                            NormalizedUserName = "ADMINUSERNAME",
+                            PasswordHash = "AQAAAAEAACcQAAAAEN3SaACzKfQB6Wy2yqoMk6F0IUqkLiIqfnISmjaFSaHaW694sc8nsn5VLqXCeYEB2Q==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "",
+                            TwoFactorEnabled = false,
+                            UserName = "adminUserName"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -304,6 +338,13 @@ namespace Covid19.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "b4280b6a-0613-4cbd-a9e6-f1701e926e73",
+                            RoleId = "b4280b6a-0613-4cbd-a9e6-f1701e926e73"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
