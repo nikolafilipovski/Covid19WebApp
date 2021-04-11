@@ -1,0 +1,44 @@
+﻿@model Covid19.Models.UserModel
+
+<h2>Create User</h2>
+
+<hr />
+
+<form asp-action="Create">
+
+    <div class="form-group">
+        <label asp-for="userName"></label>
+        <input asp-for="userName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="userEmail"></label>
+        <input asp-for="userEmail" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="userPassword"></label>
+        <input asp-for="userPassword" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="userRoleID" class="control-label"></label>
+        <select asp-for="userRoleID" class="form-control" id="role" asp-items="ViewBag.roleList"></select>
+        <input asp-for="userRoleName" hidden class="form-control" id="roleName" />
+    </div>
+
+    <button type="submit" class="btn btn-block btn-success">
+        <i class="fas fa-save"></i> &nbsp; Create
+    </button>
+</form>
+
+
+
+@section Scripts {
+    <script>
+        $("#role").change(function () {
+            var optionSelected = $("option:selected", this);
+            var valueSelected = this.value;
+            var textSelected = optionSelected.text();
+            $("#roleName").val(textSelected);
+
+        }); 
+    </script>
+}

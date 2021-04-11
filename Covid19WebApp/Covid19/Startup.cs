@@ -35,6 +35,7 @@ namespace Covid19
                 options.UseSqlServer(
                     Configuration.GetConnectionString("Covid19Connection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<DataContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
@@ -48,6 +49,7 @@ namespace Covid19
             services.AddTransient<IPatientService, PatientService>();
             services.AddTransient<ICityService, CityService>();
             services.AddTransient<ICurrentConditionService, CurrentConditionService>();
+            services.AddTransient<IUserService, UserService>(); // User logic goes here
 
         }
 
