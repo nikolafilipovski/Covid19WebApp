@@ -17,7 +17,9 @@ namespace Covid19.Controllers
         private readonly IHospitalService _hospitalService;
         private readonly ILogger<PatientController> _logger;
 
-        public PatientController(IPatientService patientService, IHospitalService hospitalService, ILogger<PatientController> logger)
+        public PatientController(IPatientService patientService,
+            IHospitalService hospitalService,
+            ILogger<PatientController> logger)
         {
             _patientService = patientService;
             _hospitalService = hospitalService;

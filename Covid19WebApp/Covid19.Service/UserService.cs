@@ -10,7 +10,7 @@ namespace Covid19.Service
 {
     public class UserService : IUserService
     {
-        public IQueryable<SelectListItem> Dropdown(IQueryable<IdentityRole> roles)
+        public IQueryable<SelectListItem> Dropdown(IQueryable<IdentityRole> roles, string? currentRoleName)
         {
             List<SelectListItem> roleList = new List<SelectListItem>();
             roleList.Add(new SelectListItem { Value = "0", Text = "Select role ..." });

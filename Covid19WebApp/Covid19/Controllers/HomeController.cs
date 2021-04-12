@@ -15,7 +15,8 @@ namespace Covid19.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly ICurrentConditionService _currentConditionService;
 
-        public HomeController(ILogger<HomeController> logger, ICurrentConditionService currentConditionService)
+        public HomeController(ILogger<HomeController> logger, 
+            ICurrentConditionService currentConditionService)
         {
             _logger = logger;
             _currentConditionService = currentConditionService;

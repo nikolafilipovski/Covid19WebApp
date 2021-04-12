@@ -9,6 +9,6 @@ namespace Covid19.Service.Interfaces
 {
     public interface IUserService
     {
-        IQueryable<SelectListItem> Dropdown(IQueryable<IdentityRole> roles);
+        IQueryable<SelectListItem> Dropdown(IQueryable<IdentityRole> roles, string? currentRoleName);
     }
 }
