@@ -9,3 +9,4 @@ C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19W
 C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Entities\obj\Debug\netcoreapp3.1\Covid19.Entities.dll
 C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Entities\obj\Debug\netcoreapp3.1\Covid19.Entities.pdb
 C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Entities\obj\Debug\netcoreapp3.1\Covid19.Entities.genruntimeconfig.cache
+C:\Users\Matej & Marko\Desktop\Code Academy\Covid19WebApp\Covid19WebApp\Covid19WebApp\Covid19.Entities\obj\Debug\netcoreapp3.1\Covid19.Entities.csprojAssemblyReference.cache

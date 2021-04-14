@@ -1,6 +1,7 @@
 ﻿using Covid19.Entities;
 using Covid19.Models;
 using Covid19.Service.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
